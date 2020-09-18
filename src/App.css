@@ -1,38 +1,41 @@
-.App {
-  text-align: center;
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  background-image: url(./Res/background.jpg);
+  background-color: rgba(0, 0, 0, 0.3);
+  background-blend-mode: overlay;
+  background-size: cover;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.TodoItem {
+  height: fit-content;
+  font-family: "DM Sans", sans-serif;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
+  font-family: "DM Sans", sans-serif;
+  background-color: rgb(250, 250, 250);
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-content: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding-bottom: 5px;
+  margin-bottom: 30px;
 }
-
-.App-link {
-  color: #61dafb;
+.add {
+  width: 600px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add-btn {
+  cursor: pointer;
+  width: 150px;
+  height: 30px;
+  border: 3px;
+  border-color: rgb(0, 0, 0);
+}
+.btn {
+  cursor: pointer;
+  padding: 5px;
+  margin: 2px 5px;
+  background-color: rgb(250, 250, 250);
+  border: 2px;
+  border-radius: 3px;
+  border-color: rgb(0, 0, 0);
 }

@@ -1,24 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import NavBar from "./Components/NavBar";
+import Todos from "./Components/Todos";
+import AddItem from "./Components/AddItem";
+import "./App.css";
 
 function App() {
+  const [list, setList] = useState([
+    { id: 1, title: "Workshop: React State", completed: false },
+    { id: 2, title: "Checkpoint: Movie App", completed: false },
+    { id: 3, title: "One2one: React Components", completed: false },
+  ]);
+  const markComplete = (id) => {
+    setList(list.map((item) => (item.id === id ? { ...item, completed: !item.completed } : item)));
+  };
+  const deleteItem = (id) => {
+    setList([...list.filter((item) => item.id !== id)]);
+  };
+  const addingItem = (newItem) => {
+    setList([...list, newItem]);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+      <AddItem addingItem={addingItem} />
+      <Todos list={list} markComplete={markComplete} deleteItem={deleteItem} />
     </div>
   );
 }
